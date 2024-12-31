@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask R-CNN Predictor</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mask R-CNN</h1>
+            <p>Upload an image to detect objects and visualize masks.</p>
+        </header>
+        <main>
+            <form action="/" method="POST" enctype="multipart/form-data" class="upload-form">
+                <input type="file" name="file" accept="image/*" required>
+                <button type="submit">Mask</button>
+            </form>
+            {% if output_image %}
+            <div class="result">
+                <h2>Prediction Result:</h2>
+                <img src="{{ output_image }}" alt="Result">
+            </div>
+            {% endif %}
+        </main>
+        <footer>
+            <p><strong>Tayyub Ahmed</strong></p>
+        </footer>
+    </div>
+</body>
+</html>
